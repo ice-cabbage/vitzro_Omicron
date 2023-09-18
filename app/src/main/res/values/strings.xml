@@ -2,12 +2,14 @@
     <string name="about">About</string>
     <string name="about_description">About Button</string>
     <string name="app_name">Omicron</string>
+    <string name="apply">Apply</string>
     <string name="back">Back</string>
     <string name="client_id">Client ID</string>
     <string name="connect">Connect</string>
     <string name="demand">Demand</string>
     <string name="demand_description">Demand navigation button</string>
     <string name="disconnect">Disconnect</string>
+    <string name="frequency">Frequency</string>
     <string name="home">Home</string>
     <string name="home_description">Home navigation button</string>
     <string name="menu_description">Menu Button</string>
@@ -16,6 +18,7 @@
     <string name="publish">Publish</string>
     <string name="reverse">Reverse</string>
     <string name="reverse_description">Reverse navigation button</string>
+    <string name="run">Run</string>
     <string name="send">Send</string>
     <string name="sequential">Sequential</string>
     <string name="sequential_description">Sequential navigation button</string>
@@ -24,6 +27,7 @@
     <string name="settings_description">Settings Button</string>
     <string name="sincere">True</string>
     <string name="sincere_description">True navigation Button</string>
+    <string name="stop">Stop</string>
     <string name="system">System</string>
     <string name="system_description">System navigation Button</string>
     <string name="subscribe">Subscribe</string>
@@ -36,4 +40,18 @@
     <string name="type_username">Type Username</string>
     <string name="unsubscribe">Unsubscribe</string>
     <string name="username">Username</string>
+    <string name="va">Va</string>
+    <string name="vb">Vb</string>
+    <string name="vc">Vc</string>
+    <string name="va_angle">\u2220Va</string>
+    <string name="vb_angle">\u2220Vb</string>
+    <string name="vc_angle">\u2220Vc</string>
+    <string name="ia">Ia</string>
+    <string name="ib">Ib</string>
+    <string name="ic">Ic</string>
+    <string name="ia_angle">\u2220Ia</string>
+    <string name="ib_angle">\u2220Ib</string>
+    <string name="ic_angle">\u2220Ic</string>
+    <string name="input_value">input Value</string>
+    <string name="input_value_description">input Value navigation button</string>
 </resources>
