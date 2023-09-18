@@ -143,6 +143,9 @@ fun NavGraphBuilder.mainGraph(drawerState: DrawerState, navController: NavHostCo
         composable("about") {
             AboutScreen()
         }
+        composable("wave") {
+            InputValueScreen()
+        }
     }
 }
 
@@ -394,6 +397,19 @@ fun MainCompose(
                                 modifier = Modifier.size(32.dp))
                             },
                             label = {Text(stringResource(R.string.system))}
+                        )
+                        NavigationBarItem(route == "wave",
+                            onClick = {
+                                navController.navigate("wave") {
+                                    popUpTo(popUpToId)
+                                }
+                            },
+                            icon = { Icon(
+                                painterResource(R.drawable.ic_wave),
+                                contentDescription = stringResource(R.string.input_value_description),
+                                modifier = Modifier.size(32.dp))
+                            },
+                            label = {Text(stringResource(R.string.input_value))}
                         )
                     }
                 }
