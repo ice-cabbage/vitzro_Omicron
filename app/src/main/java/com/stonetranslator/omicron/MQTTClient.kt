@@ -10,6 +10,7 @@ import org.eclipse.paho.client.mqttv3.MqttCallback
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions
 import org.eclipse.paho.client.mqttv3.MqttException
 import org.eclipse.paho.client.mqttv3.MqttMessage
+import java.nio.ByteBuffer
 
 var mqttClient: MQTTClient? = null
 
@@ -141,6 +142,22 @@ class MQTTClient(context: Context, serverURI: String, clientID: String = "") {
         }
     }
 
+    fun publish(topic:      String,
+                msg:        IntArray,
+                qos:        Int                 = 1,
+                retained:   Boolean             = false,
+                cbPublish: IMqttActionListener = defaultCbPublish) {
+        try {
+            val message = MqttMessage()
+            message.payload = msg.toByteArray()
+            message.qos = qos
+            message.isRetained = retained
+            mqttClient.publish(topic, message, null, cbPublish)
+        } catch (e: MqttException) {
+            e.printStackTrace()
+        }
+    }
+
     fun disconnect(cbDisconnect: IMqttActionListener = defaultCbDisconnect ) {
         try {
             mqttClient.disconnect(null, cbDisconnect)
@@ -148,4 +165,16 @@ class MQTTClient(context: Context, serverURI: String, clientID: String = "") {
             e.printStackTrace()
         }
     }
+}
+
+fun IntArray.toByteArray(): ByteArray {
+    val bytes = ByteBuffer.allocate(this.size * Int.SIZE_BYTES)
+    bytes.asIntBuffer().put(this)
+    return bytes.array()
+}
+
+fun  ByteArray.toIntArray(): IntArray {
+    val ints = IntArray(this.size / Int.SIZE_BYTES)
+    ByteBuffer.wrap(this).asIntBuffer()[ints]
+    return ints
 }
