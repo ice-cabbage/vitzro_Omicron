@@ -283,7 +283,7 @@ fun TopicListItem(
                                 override fun onSuccess(asyncActionToken: IMqttToken?) {
                                     val msg = "Publish message: ${topics[topic]} to topic: $topic"
                                     Log.d(this.javaClass.name, msg)
-                                    Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+                                    //Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
                                 }
 
                                 override fun onFailure(
